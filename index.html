@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fituous: track your food, pay once, own it</title>
+    <meta
+      name="description"
+      content="A nutrition tracker you buy once. No subscription, no account, no ads, no tracking. Your diary and your health data stay on your phone."
+    />
+    <meta name="theme-color" content="#1A1C1E" />
+    <meta property="og:title" content="Fituous: track your food, pay once, own it" />
+    <meta
+      property="og:description"
+      content="No subscription. No account. No ads. No tracking. One purchase, and it's yours."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <!--
+      The app mark: the same artwork as the launcher icon (ic_launcher_foreground.xml), white on brand
+      blue. Defined once as a symbol and referenced by <use>, so the nav and the footer cannot drift.
+      The heavy 79.06 stroke is not decoration. The F's strokes are built from a thin skeleton path plus
+      that stroke, so dropping it would draw a different, spindly letter.
+    -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+      <symbol id="fituous-mark" viewBox="0 0 108 108">
+        <rect width="108" height="108" rx="26" fill="#37A9E7"></rect>
+        <g
+          transform="translate(54 54) scale(0.0423529)"
+          fill="#FFFFFF"
+          stroke="#FFFFFF"
+          stroke-width="79.06"
+          stroke-linecap="square"
+          stroke-linejoin="miter"
+        >
+          <path
+            d="M-374.428,-111.505 C-374.428,-315.249 -209.961,-479.716 -6.21747,-479.716 L607.467,-479.716 L607.467,-725.19 L-6.21747,-725.19 C-344.971,-725.19 -619.902,-450.259 -619.902,-111.505 L-619.902,502.179 L-374.428,502.179 L-374.428,-111.505 Z"
+          ></path>
+          <path
+            d="M-374.428,489.906 C-374.428,286.162 -209.961,121.695 -6.21747,121.695 C-6.21747,121.695 310.087,121.695 482.323,121.695 C654.56,121.695 676.604,-123.779 482.323,-123.779 C288.043,-123.779 -6.21747,-123.779 -6.21747,-123.779 C-344.971,-123.779 -619.902,151.152 -619.902,489.906 C-619.902,489.906 -619.902,423.331 -619.902,594.941 C-619.902,766.552 -374.428,770.648 -374.428,594.941 C-374.428,419.235 -374.428,489.906 -374.428,489.906 Z"
+          ></path>
+        </g>
+      </symbol>
+    </svg>
+
+
+    <header class="nav" id="nav">
+      <div class="wrap nav__inner">
+        <a class="brand" href="#top" aria-label="Fituous home">
+          <svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#fituous-mark"></use></svg>
+          <span class="brand__name">Fituous</span>
+        </a>
+
+        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+          <span class="sr">Menu</span>
+          <span class="nav__bars" aria-hidden="true"></span>
+        </button>
+
+        <nav class="nav__menu" id="navMenu">
+          <a href="#the-deal">The deal</a>
+          <a href="#features">Features</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#faq">FAQ</a>
+          <a class="btn btn--primary btn--sm" href="#" data-store-link="ios">Get Fituous</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero" id="top">
+        <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">
+            <span class="pill pill--accent">No subscription</span>
+            <span class="pill">No account</span>
+            <span class="pill">No ads</span>
+            <span class="pill">No tracking</span>
+          </p>
+
+          <h1>Track your food.<br />Pay once. <span class="accent">Own it.</span></h1>
+
+          <p class="lede">
+            Fituous is a nutrition tracker for iPhone and Android that doesn't charge you rent. You buy it
+            once. Your diary lives on your phone, not on somebody's server, and nobody sends you a bill
+            for the data you typed in yourself.
+          </p>
+
+          <div class="cta">
+            <a class="store" href="#" data-store-link="ios"><img class="badge badge--apple" src="/badges/download-on-the-app-store.svg" alt="Download on the App Store" width="143" height="48" /></a>
+            <a class="store" href="https://play.google.com/store/apps/details?id=com.softklass.fituous" target="_blank" data-store-link="android"><img class="badge badge--google" src="/badges/get-it-on-google-play.png" alt="Get it on Google Play" width="145" height="56" /></a>
+            <a class="btn btn--ghost" href="#features">See what it does</a>
+          </div>
+
+          <p class="fineprint">
+            One purchase. No recurring charge, ever. No price on this page either, because your app store
+            sets it for your region.
+          </p>
+        </div>
+
+        <div class="hero__device">
+          <figure class="shot">
+            <img
+              src="/shots/home-dark.jpg"
+              alt="Fituous home screen: a calorie ring showing 1874 of 2346 kcal, protein, carb and fat bars, quick actions for scanning, searching, weighing in and exercise, a water meter and a carb split chart."
+              width="575"
+              height="1280"
+            />
+            <figcaption>The whole day on one screen.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- The subscription pitch -->
+      <section class="section" id="the-deal">
+        <div class="wrap">
+          <h2 class="section__title">You've probably already met the usual deal</h2>
+          <p class="section__lede">
+            Free to download. Three days of the good version. Then a paywall between you and the food
+            you've been logging for a month. Your own entries, held just out of reach until you
+            subscribe. Then the price goes up, because it can.
+          </p>
+
+          <div class="compare">
+            <div class="compare__col compare__col--them">
+              <h3>The usual deal</h3>
+              <ul>
+                <li>Free trial that quietly becomes a monthly charge</li>
+                <li>An account, an email, a password to remember</li>
+                <li>Your food diary stored on their servers</li>
+                <li>Ads, or an upsell to remove them</li>
+                <li>Your own history paywalled behind a tier</li>
+                <li>Export is a premium feature, if it exists</li>
+                <li>Cancel, and you lose access to what you logged</li>
+              </ul>
+            </div>
+
+            <div class="compare__col compare__col--us">
+              <h3>Fituous</h3>
+              <ul>
+                <li>Pay once, and that's the whole transaction</li>
+                <li>No account. There is nothing to sign up to</li>
+                <li>Your diary is stored on your device</li>
+                <li>No ads, and nothing to buy to remove them</li>
+                <li>Every feature is the feature you bought</li>
+                <li>Your data is yours from the first entry</li>
+                <li>Nothing expires, because nothing is rented</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="maths">
+            <h3>The arithmetic nobody shows you up front</h3>
+            <p>
+              A tracker at <strong>$9.99 a month</strong> is about
+              <strong>$120 a year</strong>, and roughly <strong>$360 over three years</strong>. More than
+              most people spend on the phone they're logging on. Subscriptions aren't evil; some things
+              genuinely need ongoing work to run. A food diary mostly needs to store the numbers you
+              typed. That's a one-time problem, so it has a one-time price.
+            </p>
+            <p class="fineprint">
+              That figure is an illustration, not a claim about any particular app. Check what you're
+              currently paying: your app store's subscription list will tell you in ten seconds.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="section section--alt" id="features">
+        <div class="wrap">
+          <h2 class="section__title">What you actually get</h2>
+          <p class="section__lede">
+            A complete tracker, not a demo with the useful parts locked.
+          </p>
+
+                    <div class="tour">
+            <article class="tour__row">
+              <div class="tour__copy">
+                <p class="tour__kicker">Logging</p>
+                <h3>Log it in seconds, not minutes</h3>
+                <p>
+                  Scan a barcode, search by name, or type it in yourself. Barcodes resolve against Open
+                  Food Facts and nutrition data against USDA FoodData Central, with the source printed on
+                  the screen so you can see where a number came from.
+                </p>
+                <ul class="ticks">
+                  <li>Amounts in grams, ounces, fluid ounces or servings, converted for you</li>
+                  <li>Saved foods keep the values you corrected, and you can update them again</li>
+                  <li>Meals group the day, and a saved meal logs again in one tap</li>
+                </ul>
+              </div>
+              <div class="shots shots--two">
+            <figure class="shot">
+              <img src="/shots/food-detail.jpg" alt="Food detail sheet for Chocolate showing a servings stepper, measurement chips in grams, ounces, fluid ounces and servings, the Open Food Facts source, a saved-in-My-Foods notice and a full nutrition breakdown." width="575" height="1280" loading="lazy" />
+              <figcaption>Every result shows its source and its serving options.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="/shots/meals.jpg" alt="The Meals tab listing Breakfast, Lunch and Dinner with per-meal calorie totals, and each logged food with its protein, carb and fat breakdown." width="575" height="1280" loading="lazy" />
+              <figcaption>Breakfast, lunch and dinner, each with its own total.</figcaption>
+            </figure>
+              </div>
+            </article>
+
+            <article class="tour__row">
+              <div class="tour__copy">
+                <p class="tour__kicker">Progress</p>
+                <h3>Progress that tells you the truth</h3>
+                <p>
+                  Calories against your target, a heat map of the month, and a weight trend over eight
+                  weeks. Underneath every chart is the number most apps leave out:
+                  <strong>how many days it was actually based on</strong>.
+                </p>
+                <ul class="ticks">
+                  <li>Switch between week, month and year views of the same data</li>
+                  <li>Days you didn't log are shown as empty, never as failures</li>
+                  <li>Best day and average calories, so a good week is visible at a glance</li>
+                </ul>
+              </div>
+              <div class="shots shots--two">
+            <figure class="shot">
+              <img src="/shots/progress-week.jpg" alt="Progress screen, week view: bar chart of daily calories with an average of 1686 kcal, one day under target out of seven, and the best day as Wednesday." width="575" height="1280" loading="lazy" />
+              <figcaption>Week view: every logged day, and the average.</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="/shots/progress-month.jpg" alt="Progress screen, month view: a heat map of the month shaded by how close each day was to target, showing 6 of 26 days logged at an average of 1630 kcal." width="575" height="1280" loading="lazy" />
+              <figcaption>Month view: a heat map, and how much of it you logged.</figcaption>
+            </figure>
+              </div>
+            </article>
+
+            <article class="tour__row">
+              <div class="tour__copy">
+                <p class="tour__kicker">Micronutrients</p>
+                <h3>Vitamins and minerals, with the gaps left visible</h3>
+                <p>
+                  Calorie counting misses most of what food does. Fituous tracks the vitamins and minerals
+                  you care about, with your own targets and a running total against them.
+                </p>
+                <ul class="ticks">
+                  <li>Personal targets, marked <em>for you</em> where they differ from the default</li>
+                  <li>Upper limits shown alongside targets, not hidden behind a warning</li>
+                  <li>A vitamin with no data reads <strong>no data</strong>, because a gap is not a
+                      deficiency</li>
+                </ul>
+              </div>
+              <div class="shots shots--single">
+            <figure class="shot">
+              <img src="/shots/nutrients.jpg" alt="Nutrients screen listing Vitamin A, C, D, E, K, B1, B2, B3 and B5 with progress bars against personal targets and upper limits. Vitamin B5 shows no data rather than zero." width="575" height="1280" loading="lazy" />
+              <figcaption>Targets, upper limits, and honest gaps.</figcaption>
+            </figure>
+              </div>
+            </article>
+
+            <article class="tour__row">
+              <div class="tour__copy">
+                <p class="tour__kicker">Hydration</p>
+                <h3>Water that knows your glass</h3>
+                <p>
+                  Log a glass, a bottle or a flask, sized to your own containers rather than someone
+                  else's idea of a serving. Switch between millilitres and ounces whenever you like.
+                </p>
+                <ul class="ticks">
+                  <li>Your container sizes, saved as presets you tap</li>
+                  <li>A fill-level meter instead of another number to interpret</li>
+                  <li>The week's hydration at a glance, so a good run is obvious</li>
+                </ul>
+              </div>
+              <div class="shots shots--single">
+            <figure class="shot">
+              <img src="/shots/hydration.jpg" alt="Hydration screen showing 1200 of a 2500 ml goal with a bottle-shaped fill meter, millilitre and ounce toggle, glass, bottle and flask presets, and a bar chart of the week's intake." width="575" height="1280" loading="lazy" />
+              <figcaption>Millilitres or ounces, and your own containers.</figcaption>
+            </figure>
+              </div>
+            </article>
+
+            <article class="tour__row">
+              <div class="tour__copy">
+                <p class="tour__kicker">Theming</p>
+                <h3>Light and dark, included</h3>
+                <p>
+                  The whole app follows your system theme. It is not a setting hidden behind a subscription,
+                  because a dark background is not a feature you should have to rent.
+                </p>
+                <ul class="ticks">
+                  <li>Every screen is designed in both, including the charts</li>
+                  <li>No upsell, no "pro" theme pack, no nag to unlock it</li>
+                </ul>
+              </div>
+              <div class="shots shots--single">
+            <figure class="shot">
+              <img src="/shots/home-light.jpg" alt="The same home screen in its light theme: white surfaces, the same calorie ring, macro bars and quick actions." width="575" height="1280" loading="lazy" />
+              <figcaption>The same screen, in the light theme.</figcaption>
+            </figure>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="privacy">
+        <div class="wrap">
+          <h2 class="section__title">Where your data goes: nowhere</h2>
+          <p class="section__lede">
+            Every claim here is a design decision in the app, not a policy paragraph.
+          </p>
+
+          <div class="grid grid--two">
+            <article class="card card--claim">
+              <h3><span class="tick" aria-hidden="true"></span>No account</h3>
+              <p>
+                There is no sign-up, no email, no password. Your diary is stored on your device, so there
+                is no server holding a copy and nothing to breach.
+              </p>
+            </article>
+
+            <article class="card card--claim">
+              <h3><span class="tick" aria-hidden="true"></span>Voice stays on your phone</h3>
+              <p>
+                Speech is recognised on-device. Fituous refuses the server route outright: on a device that
+                can't do on-device recognition, it says so instead of quietly uploading your voice.
+              </p>
+            </article>
+
+            <article class="card card--claim">
+              <h3><span class="tick" aria-hidden="true"></span>No ads</h3>
+              <p>
+                No adverts, no ad SDKs, nothing to pay to make them stop. You already paid.
+              </p>
+            </article>
+
+            <article class="card card--claim">
+              <h3><span class="tick" aria-hidden="true"></span>No tracking or analytics</h3>
+              <p>
+                No analytics, no crash telemetry, no cookies on this page either. Nobody is counting how
+                long you looked at the subscription section.
+              </p>
+            </article>
+
+            <article class="card card--claim">
+              <h3><span class="tick" aria-hidden="true"></span>Health data is read, never written</h3>
+              <p>
+                When you import workouts or weigh-ins from Health Connect or Apple Health, access is
+                read-only. Fituous never adds to or changes your health records.
+              </p>
+            </article>
+
+            <article class="card card--claim">
+              <h3><span class="tick" aria-hidden="true"></span>Public data stays public</h3>
+              <p>
+                Food data comes from Open Food Facts and USDA FoodData Central. Nothing derived from it is
+                sold, resold, or bundled into anything for sale.
+              </p>
+            </article>
+          </div>
+
+          <p class="section__cta">
+            <a class="btn" href="/policy.html">Read the full privacy policy</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section section--alt" id="faq">
+        <div class="wrap wrap--narrow">
+          <h2 class="section__title">Questions people actually ask</h2>
+
+          <details class="faq">
+            <summary>Is there a subscription?</summary>
+            <p>
+              No. You buy Fituous once and every feature is yours. No trial that converts, no premium
+              tier, no "pro" version waiting behind a paywall, and no recurring charge to forget about.
+            </p>
+          </details>
+
+          <details class="faq">
+            <summary>How much does it cost?</summary>
+            <p>
+              A single one-time purchase, priced by the app store for your region. There is no figure on
+              this page because a number here would be wrong somewhere in the world, and because a
+              one-time price doesn't change when you're not looking.
+            </p>
+          </details>
+
+          <details class="faq">
+            <summary>What happens to my diary if I stop using it?</summary>
+            <p>
+              It stays on your device, because that's where it always was. Nothing is deleted for
+              non-payment, and there is no account that lapses.
+            </p>
+          </details>
+
+          <details class="faq">
+            <summary>Why does voice need on-device recognition?</summary>
+            <p>
+              Because the alternative sends your audio to a server. Both platforms default to that, so
+              Fituous asks for the on-device path and declines to listen at all if it isn't available.
+              On older Android versions that means voice logging is unavailable, which we'd rather tell
+              you than quietly break the promise.
+            </p>
+          </details>
+
+          <details class="faq">
+            <summary>What's in beta?</summary>
+            <p>
+              Voice Builder, and it's labelled BETA wherever it appears. It's honest about its limits: it
+              shows you what it heard and what each item resolved to before logging anything. Everything
+              else is finished, shipped and included.
+            </p>
+          </details>
+
+          <details class="faq">
+            <summary>Which platforms?</summary>
+            <p>
+              iPhone and Android. There's no web app: the diary lives on the device, and a browser tab is
+              the wrong place for it.
+            </p>
+          </details>
+
+          <details class="faq">
+            <summary>Is this medical advice?</summary>
+            <p>
+              No. Fituous counts what you tell it and shows you the arithmetic, including how much of
+              the month you actually logged. It points out patterns, never causes, and it isn't a
+              substitute for a doctor or a dietitian.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Close -->
+      <section class="section close">
+        <div class="wrap close__inner">
+          <h2 class="section__title">Buy it once. Then just use it.</h2>
+          <p class="section__lede">
+            No subscription, no account, no ads, no tracking, and no reason for anyone to keep billing
+            you for numbers you wrote down yourself.
+          </p>
+          <div class="cta">
+            <a class="store" href="#" data-store-link="ios"><img class="badge badge--apple" src="/badges/download-on-the-app-store.svg" alt="Download on the App Store" width="143" height="48" /></a>
+            <a class="store" href="https://play.google.com/store/apps/details?id=com.softklass.fituous" target="_blank" data-store-link="android"><img class="badge badge--google" src="/badges/get-it-on-google-play.png" alt="Get it on Google Play" width="145" height="56" /></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <p class="footer__brand">
+          <svg class="footer__mark" aria-hidden="true" focusable="false"><use href="#fituous-mark"></use></svg> &copy; Fituous · <span id="year"></span>
+        </p>
+        <p class="fineprint">
+          <a href="/policy.html">Privacy policy</a> ·
+          <a href="mailto:info@softklass.com">info@softklass.com</a>
+        </p>
+        <p class="fineprint">
+          Food data from Open Food Facts and USDA FoodData Central. Fituous and Hindsight Score are trademarks of
+          Softklass, LLC. This page sets no cookies and runs no analytics.
+        </p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
