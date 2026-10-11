@@ -26,6 +26,10 @@
   --wrap: 1120px;
   --wrap-narrow: 760px;
 
+  /* The shared height of every vendor mark on the page, so the store badges and the health badges
+     can never disagree about how big they are. */
+  --badge-height: 48px;
+
   color-scheme: dark;
 }
 
@@ -283,18 +287,89 @@ a:hover {
   opacity: 0.92;
 }
 
+/* Both badges are drawn at the same height. The source artwork is used unmodified, as both vendors'
+   brand guidelines require, so each file keeps its own aspect ratio and the two widths differ
+   slightly. Google's asset is an SVG with no transparent margin, so it needs no correction. */
 .badge {
   display: block;
   width: auto;
-  /* The source artwork is used unmodified, as both vendors' brand guidelines require. Google's asset
-     carries transparent padding around the badge, so it is set taller to look the same size as
-     Apple's rather than measuring the same. */
-  height: 48px;
+  height: var(--badge-height);
 }
 
-.badge--google {
-  height: 56px;
-  margin: -4px 0;
+/* Google's badge is the wider of the two, so on narrow phones the pair no longer fits on one line at
+   48px. The shared height steps down and both badges follow it, so they stay the same size as each
+   other. */
+@media (max-width: 370px) {
+  :root {
+    --badge-height: 44px;
+  }
+}
+
+/* ---- health platform call-out ---- */
+
+.health__panel {
+  border: 1px solid var(--border-strong);
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(55, 169, 231, 0.09), transparent);
+  padding: 32px;
+}
+
+.health__panel .section__lede {
+  margin-bottom: 0;
+}
+
+/* Apple requires clear space around its badge equal to a quarter of the badge's height, so the gap
+   between the two marks stays above 12px. */
+.health__marks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 26px;
+}
+
+/* Google publishes no "Works with Health Connect" badge, only the square Health Connect product icon,
+   and its guidelines ask for the colour icon on a white or very light surface. This tile is ours and
+   not Google's: the icon is used unmodified and at its official proportions, on the surface Google
+   specifies for it. */
+.health__tile {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: var(--badge-height);
+  padding: 0 18px 0 12px;
+  border-radius: 10px;
+  background: #fff;
+  color: #10161b;
+  /* Steps down with the viewport so the label stays on one line beside the icon, and the tile stays
+     the same height as the badge next to it. */
+  font-size: clamp(13px, 3.4vw, 15px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.health__icon {
+  display: block;
+  flex: none;
+  width: 34px;
+  height: 34px;
+}
+
+.health__legal {
+  margin: 22px 0 0;
+  max-width: 72ch;
+  color: var(--text-faint);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* On phones the panel's 32px inset leaves the Health Connect label too little room, so the label
+   breaks onto a second line and the tile outgrows the badge beside it. */
+@media (max-width: 420px) {
+  .health__panel {
+    padding: 24px 20px;
+  }
 }
 
 /* ---- hero ---- */
