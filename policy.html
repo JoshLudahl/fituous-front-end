@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scheme-dark scroll-smooth motion-reduce:scroll-auto">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,10 +13,14 @@
     <meta property="og:type" content="article" />
     <link rel="stylesheet" href="/src/styles.css" />
   </head>
-  <body>
-    <a class="skip" href="#main">Skip to content</a>
+  <body class="bg-page font-sans text-base text-ink antialiased">
+    <a
+      class="absolute -left-[9999px] top-0 z-50 rounded-br-lg bg-brand px-[18px] py-3 font-bold text-on-brand focus:left-0"
+      href="#main"
+      >Skip to content</a
+    >
 
-    <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+    <svg class="absolute size-0" aria-hidden="true" focusable="false">
       <symbol id="fituous-mark" viewBox="0 0 108 108">
         <rect width="108" height="108" rx="26" fill="#37A9E7"></rect>
         <g
@@ -33,68 +37,91 @@
       </symbol>
     </svg>
 
-    <header class="nav" id="nav">
-      <div class="wrap nav__inner">
-        <a class="brand" href="/" aria-label="Fituous home">
-          <svg class="brand__mark" aria-hidden="true" focusable="false"><use href="#fituous-mark"></use></svg>
-          <span class="brand__name">Fituous</span>
+    <header
+      class="sticky top-0 z-20 border-b border-b-transparent bg-page/[0.82] backdrop-blur-md transition-colors duration-200 data-[stuck]:border-b-line"
+      id="nav"
+    >
+      <div class="mx-auto flex min-h-[68px] w-full max-w-wrap items-center gap-5 px-6">
+        <a
+          class="inline-flex items-center gap-2.5 font-extrabold tracking-[-0.01em] text-ink hover:no-underline"
+          href="/"
+          aria-label="Fituous home"
+        >
+          <svg class="block size-[26px] shrink-0" aria-hidden="true" focusable="false"><use href="#fituous-mark"></use></svg>
+          <span>Fituous</span>
         </a>
 
-        <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
-          <span class="sr">Menu</span>
-          <span class="nav__bars" aria-hidden="true"></span>
+        <button
+          class="ml-auto hidden size-11 cursor-pointer rounded-xl border border-line bg-surface max-nav:block"
+          id="navToggle"
+          aria-expanded="false"
+          aria-controls="navMenu"
+        >
+          <span class="sr-only">Menu</span>
+          <span
+            class="relative mx-auto block h-0.5 w-[18px] rounded-xs bg-ink before:absolute before:inset-x-0 before:block before:h-0.5 before:-translate-y-1.5 before:rounded-xs before:bg-ink before:content-[''] after:absolute after:inset-x-0 after:block after:h-0.5 after:translate-y-1.5 after:rounded-xs after:bg-ink after:content-['']"
+            aria-hidden="true"
+          ></span>
         </button>
 
-        <nav class="nav__menu" id="navMenu">
-          <a href="/#the-deal">The deal</a>
-          <a href="/#features">Features</a>
-          <a href="/policy.html" aria-current="page">Privacy policy</a>
-          <a href="/#faq">FAQ</a>
-          <a class="btn btn--primary btn--sm" href="#" data-store-link="ios">Get Fituous</a>
+        <nav
+          class="ml-auto flex items-center gap-[26px] text-[15px] max-nav:absolute max-nav:inset-x-4 max-nav:top-[72px] max-nav:hidden max-nav:flex-col max-nav:items-stretch max-nav:gap-1 max-nav:rounded-[14px] max-nav:border max-nav:border-line max-nav:bg-surface max-nav:p-3 max-nav:shadow-[0_18px_40px_rgb(0_0_0/0.4)] max-nav:data-[open]:flex"
+          id="navMenu"
+        >
+          <a class="text-ink-dim hover:text-ink max-nav:rounded-[10px] max-nav:p-3" href="/#the-deal">The deal</a>
+          <a class="text-ink-dim hover:text-ink max-nav:rounded-[10px] max-nav:p-3" href="/#features">Features</a>
+          <a class="text-ink-dim hover:text-ink max-nav:rounded-[10px] max-nav:p-3" href="/policy.html" aria-current="page">Privacy policy</a>
+          <a class="text-ink-dim hover:text-ink max-nav:rounded-[10px] max-nav:p-3" href="/#faq">FAQ</a>
+          <a
+            class="inline-flex min-h-[38px] cursor-pointer items-center justify-center rounded-full border border-brand bg-brand px-4 text-[15px] font-bold text-on-brand transition-[transform,translate,border-color,background] duration-[120ms] hover:-translate-y-px hover:bg-brand-soft hover:no-underline motion-reduce:transition-none motion-reduce:hover:translate-y-0 max-nav:mt-1.5 max-nav:rounded-[10px] max-nav:py-3"
+            href="#"
+            data-store-link="ios"
+            >Get Fituous</a
+          >
         </nav>
       </div>
     </header>
 
     <main id="main">
-      <section class="section">
-        <div class="wrap wrap--narrow policy">
-          <p class="tour__kicker">Legal</p>
-          <h1>Privacy Policy</h1>
-          <p class="lede">
+      <section class="py-20 max-nav:py-[60px]">
+        <div class="mx-auto w-full max-w-narrow px-6">
+          <p class="mb-2.5 text-[12px] font-extrabold uppercase tracking-[0.1em] text-brand">Legal</p>
+          <h1 class="mb-[22px] text-[clamp(30px,4.4vw,46px)] font-extrabold">Privacy Policy</h1>
+          <p class="max-w-[68ch] text-[clamp(17px,2vw,20px)] text-ink-dim">
             Fituous is made by Softklass, LLC. This is the whole policy, and it is short because there is
             not much to describe.
           </p>
 
-          <h2>Children</h2>
-          <p>
+          <h2 class="mt-11 text-xl font-bold">Children</h2>
+          <p class="text-ink-dim">
             Fituous is not intended for children under 13 years of age. We advise children under the age of
             13 to not use this application.
           </p>
 
-          <h2>Data</h2>
-          <p>
+          <h2 class="mt-11 text-xl font-bold">Data</h2>
+          <p class="text-ink-dim">
             We do not collect any data. The only data involved in this app is what you search for, and that
             is saved in the database on the device and later retrieved to populate your progress and daily
             stats. In addition, the only data that is stored is stored on the local database. You can delete
             your data by deleting the app data. No data of any kind is collected or shared.
           </p>
 
-          <h2>Health &amp; safety</h2>
-          <p>
+          <h2 class="mt-11 text-xl font-bold">Health &amp; safety</h2>
+          <p class="text-ink-dim">
             This app is in no way shape or form providing any health recommendations. It is simply a calorie
             app that provides your information in a graphical way so that you can make decisions. We take no
             responsibility for any decisions you make based on the information provided.
           </p>
-          <p>This app is simply designed to track your <strong>calories</strong>.</p>
+          <p class="text-ink-dim">This app is simply designed to track your <strong>calories</strong>.</p>
 
-          <h2>Support</h2>
-          <p>
+          <h2 class="mt-11 text-xl font-bold">Support</h2>
+          <p class="text-ink-dim">
             Feel free to contact
-            <a href="mailto:info@softklass.com">info@softklass.com</a> with any questions or concerns.
+            <a class="underline" href="mailto:info@softklass.com">info@softklass.com</a> with any questions or concerns.
           </p>
 
-          <h2>Copyright</h2>
-          <p>
+          <h2 class="mt-11 text-xl font-bold">Copyright</h2>
+          <p class="text-ink-dim">
             © <span id="policy-year">2026</span> Softklass, LLC. Fituous and its content are protected by
             copyright law and owned exclusively by Softklass, LLC. Unauthorized reproduction, distribution,
             or modification of this software or any portion thereof is strictly prohibited.
@@ -103,17 +130,17 @@
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="wrap footer__inner">
-        <p class="footer__brand">
-          <svg class="footer__mark" aria-hidden="true" focusable="false"><use href="#fituous-mark"></use></svg>
+    <footer class="border-t border-line bg-page-alt pb-11 pt-[34px]">
+      <div class="mx-auto w-full max-w-wrap px-6">
+        <p class="mb-2 font-bold">
+          <svg class="mr-1 inline-block size-[17px] align-[-3px]" aria-hidden="true" focusable="false"><use href="#fituous-mark"></use></svg>
           Fituous · <span id="year"></span>
         </p>
-        <p class="fineprint">
+        <p class="m-0 text-sm leading-normal text-ink-faint">
           <a href="/policy.html">Privacy policy</a> ·
           <a href="mailto:info@softklass.com">info@softklass.com</a>
         </p>
-        <p class="fineprint">
+        <p class="m-0 text-sm leading-normal text-ink-faint">
           Food data from Open Food Facts and USDA FoodData Central. Hindsight Score is a trademark of
           Fituous. This page sets no cookies and runs no analytics.
         </p>

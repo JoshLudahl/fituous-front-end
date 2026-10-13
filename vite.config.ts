@@ -1,3 +1,4 @@
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 
 /**
@@ -8,6 +9,9 @@ import { defineConfig } from "vite";
  */
 export default defineConfig({
   base: "/",
+  // Tailwind v4 is a Vite plugin and a CSS `@import`, with no PostCSS step and no config file: the
+  // design tokens live in `src/styles.css`, where the utilities that use them are read from.
+  plugins: [tailwindcss()],
   build: {
     outDir: "dist",
     rollupOptions: {

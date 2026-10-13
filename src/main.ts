@@ -8,8 +8,10 @@
 /**
  * The mobile menu.
  *
- * `aria-expanded` is kept in step with the class because the visual state and the announced state are
- * read by different people, and only one of them can see the menu.
+ * `aria-expanded` is kept in step with the `data-open` attribute because the visual state and the
+ * announced state are read by different people, and only one of them can see the menu. The attribute
+ * rather than a class is what the Tailwind variant on `#navMenu` (`max-nav:data-[open]:flex`) reads,
+ * so the open state stays a state and the styling stays in the markup.
  */
 function setupNav(): void {
   const toggle = document.getElementById("navToggle");
@@ -18,12 +20,13 @@ function setupNav(): void {
   if (!(toggle instanceof HTMLButtonElement) || !menu || !nav) return;
 
   const close = (): void => {
-    menu.classList.remove("is-open");
+    menu.removeAttribute("data-open");
     toggle.setAttribute("aria-expanded", "false");
   };
 
   toggle.addEventListener("click", () => {
-    const open = menu.classList.toggle("is-open");
+    const open = !menu.hasAttribute("data-open");
+    menu.toggleAttribute("data-open", open);
     toggle.setAttribute("aria-expanded", String(open));
   });
 
@@ -37,7 +40,7 @@ function setupNav(): void {
   });
 
   const onScroll = (): void => {
-    nav.classList.toggle("is-stuck", window.scrollY > 8);
+    nav.toggleAttribute("data-stuck", window.scrollY > 8);
   };
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
