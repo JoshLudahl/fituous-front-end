@@ -15,11 +15,13 @@ export default defineConfig({
   build: {
     outDir: "dist",
     rollupOptions: {
-      // Two pages, two files. The policy is a real page rather than a route in the landing page, so it
-      // has its own URL, its own title and its own metadata for anyone searching for it.
+      // Three pages, three files. The policy and the support page are real pages rather than routes
+      // in the landing page, so each has its own URL, its own title and its own metadata for anyone
+      // searching for it.
       input: {
         main: "index.html",
         policy: "policy.html",
+        support: "support.html",
       },
     },
     // The page is one HTML file and one small bundle: no need to split it further.
