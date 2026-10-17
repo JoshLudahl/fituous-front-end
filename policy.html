@@ -100,16 +100,26 @@
 
           <h2 class="mt-11 text-xl font-bold">Data Collection and Storage</h2>
           <p class="text-ink-dim">
-            The data involved in this app is what you search for, and that
-            is saved in the database on the device and later retrieved to populate your progress and daily
-            stats. In addition, the only data that is stored, is stored on the local database.
+            The data you search for and track is saved in the local database on your device and later retrieved to populate your progress and daily stats. All data is stored locally on your device.
 
             <br><br>
-            The app reads HealthKit if you grant the permission, and uses the information to adjust your calorie allowance, and displays progression results based on that data.
-            It is never shared with any third-party, and doesn't leave the application. This data is stored locally on your device and synchronized only through Apple's encrypted HealthKit system
+
+            <strong>Health/Fitness Integration:</strong> The app can read from your device's health system if you grant permission. On iOS, this is Apple Health (HealthKit). On Android, this is Google Fit or your chosen fitness platform. The app uses this information to adjust your calorie allowance and display progression results based on that data. This data is never shared with any third-party and doesn't leave the application. It is stored locally on your device and synchronized only through your device's native encrypted health system.
 
             <br><br>
-            Users can delete their local data at any time via: iOS Settings → General → iPhone Storage → Fituous → Delete App Data. Alternatively, uninstalling the app removes all stored data from the device.
+
+            <strong>Camera Usage:</strong> The app requests camera access exclusively to scan food barcodes when identifying products. We do not access your photo library, capture photos, or transmit any camera data to our servers. All barcode scans are processed locally on your device.
+
+            <br><br>
+
+            <strong>Data Deletion:</strong> You can delete your local data at any time:
+          <ul class="list-disc list-inside mt-2">
+            <li><strong>iOS:</strong> Settings → General → iPhone Storage → Fituous → Delete App Data (or uninstall the app)</li>
+            <li><strong>Android:</strong> Settings → Apps → Fituous → Storage → Clear Data (or uninstall the app)</li>
+          </ul>
+          <br>
+          <p>
+          You can revoke Health/fitness permissions at any time via your device Settings → Privacy → Health/Permissions → Fituous.
           </p>
 
           <h2 class="mt-11 text-xl font-bold">Camera Usage</h2>
