@@ -41,18 +41,18 @@
       class="sticky top-0 z-20 border-b border-b-transparent bg-page/[0.82] backdrop-blur-md transition-colors duration-200 data-[stuck]:border-b-line"
       id="nav"
     >
-      <div class="mx-auto flex min-h-[68px] w-full max-w-wrap items-center gap-5 px-6">
+      <div class="mx-auto flex min-h-[68px] w-full max-w-wrap items-center gap-3 px-6 max-[900px]:gap-2 max-[420px]:px-4 max-[370px]:gap-1 max-[370px]:px-3">
         <a
           class="inline-flex items-center gap-2.5 font-extrabold tracking-[-0.01em] text-ink hover:no-underline"
           href="/"
           aria-label="Fituous home"
         >
           <svg class="block size-[26px] shrink-0" aria-hidden="true" focusable="false"><use href="#fituous-mark"></use></svg>
-          <span>Fituous</span>
+          <span class="max-[370px]:hidden">Fituous</span>
         </a>
 
         <button
-          class="ml-auto hidden size-11 cursor-pointer rounded-xl border border-line bg-surface max-nav:block"
+          class="hidden size-11 cursor-pointer rounded-xl border border-line bg-surface max-[900px]:block"
           id="navToggle"
           aria-expanded="false"
           aria-controls="navMenu"
@@ -65,20 +65,36 @@
         </button>
 
         <nav
-          class="ml-auto flex items-center gap-[26px] text-[15px] max-nav:absolute max-nav:inset-x-4 max-nav:top-[72px] max-nav:hidden max-nav:flex-col max-nav:items-stretch max-nav:gap-1 max-nav:rounded-[14px] max-nav:border max-nav:border-line max-nav:bg-surface max-nav:p-3 max-nav:shadow-[0_18px_40px_rgb(0_0_0/0.4)] max-nav:data-[open]:flex"
+          class="ml-auto flex items-center gap-4 text-[15px] max-[900px]:absolute max-[900px]:inset-x-4 max-[900px]:top-[72px] max-[900px]:hidden max-[900px]:flex-col max-[900px]:items-stretch max-[900px]:gap-1 max-[900px]:rounded-[14px] max-[900px]:border max-[900px]:border-line max-[900px]:bg-surface max-[900px]:p-3 max-[900px]:shadow-[0_18px_40px_rgb(0_0_0/0.4)] max-[900px]:data-[open]:flex"
           id="navMenu"
         >
-          <a class="text-ink-dim hover:text-ink max-nav:rounded-[10px] max-nav:p-3" href="/#the-deal">The deal</a>
-          <a class="text-ink-dim hover:text-ink max-nav:rounded-[10px] max-nav:p-3" href="/#features">Features</a>
-          <a class="text-ink-dim hover:text-ink max-nav:rounded-[10px] max-nav:p-3" href="/policy.html" aria-current="page">Privacy policy</a>
-          <a class="text-ink-dim hover:text-ink max-nav:rounded-[10px] max-nav:p-3" href="/#faq">FAQ</a>
+          <a class="text-ink-dim hover:text-ink max-[900px]:rounded-[10px] max-[900px]:p-3" href="/#the-deal">The deal</a>
+          <a class="text-ink-dim hover:text-ink max-[900px]:rounded-[10px] max-[900px]:p-3" href="/#features">Features</a>
+          <a class="text-ink-dim hover:text-ink max-[900px]:rounded-[10px] max-[900px]:p-3" href="/policy.html" aria-current="page">Privacy policy</a>
+          <a class="text-ink-dim hover:text-ink max-[900px]:rounded-[10px] max-[900px]:p-3" href="/#faq">FAQ</a>
           <a
-            class="inline-flex min-h-[38px] cursor-pointer items-center justify-center rounded-full border border-brand bg-brand px-4 text-[15px] font-bold text-on-brand transition-[transform,translate,border-color,background] duration-[120ms] hover:-translate-y-px hover:bg-brand-soft hover:no-underline motion-reduce:transition-none motion-reduce:hover:translate-y-0 max-nav:mt-1.5 max-nav:rounded-[10px] max-nav:py-3"
-            href="#"
+            class="inline-flex min-h-[38px] cursor-pointer items-center justify-center rounded-full border border-brand bg-brand px-4 text-[15px] font-bold text-on-brand transition-[transform,translate,border-color,background] duration-[120ms] hover:-translate-y-px hover:bg-brand-soft hover:no-underline motion-reduce:transition-none motion-reduce:hover:translate-y-0 max-[900px]:mt-1.5 max-[900px]:rounded-[10px] max-[900px]:py-3"
+            href="https://apps.apple.com/us/app/fituous/id6819063462"
             data-store-link="ios"
             >Get Fituous</a
           >
         </nav>
+        <div class="ml-5 flex shrink-0 items-center gap-1.5 max-[900px]:ml-auto max-[900px]:gap-1">
+          <a
+            class="inline-flex rounded-lg transition-[transform,translate,opacity] duration-[120ms] hover:-translate-y-px hover:opacity-[0.92] hover:no-underline motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+            href="https://apps.apple.com/us/app/fituous/id6819063462"
+            target="_blank"
+            data-store-link="ios"
+            ><img class="block h-8 w-auto max-[420px]:h-7" src="/badges/download-on-the-app-store.svg" alt="Download on the App Store" width="143" height="48"
+          /></a>
+          <a
+            class="inline-flex rounded-lg transition-[transform,translate,opacity] duration-[120ms] hover:-translate-y-px hover:opacity-[0.92] hover:no-underline motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+            href="https://play.google.com/store/apps/details?id=com.softklass.fituous"
+            target="_blank"
+            data-store-link="android"
+            ><img class="block h-8 w-auto max-[420px]:h-7" src="/badges/get-it-on-google-play.svg" alt="Get it on Google Play" width="162" height="48"
+          /></a>
+        </div>
       </div>
     </header>
 
